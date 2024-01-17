@@ -17,7 +17,8 @@
 
             <nav class="flex gap-2">
                 <a class="font-bold uppercase text-gray-600 items-center" href="/">Login</a>
-                <a class="font-bold uppercase text-gray-600 items-center" href="/nosotros">Crear cuenta</a>
+                <a class="font-bold uppercase text-gray-600 items-center" href="{{ route('register') }}">Crear
+                    cuenta</a>
             </nav>
         </div>
 
@@ -31,7 +32,7 @@
 
     </main>
 
-    <footer class="text-center p-5 font-bold uppercase">
+    <footer class="text-center p-5 font-bold uppercase mt-10">
         DevStagram - Todos los derechos reservados {{ now()->year }}
     </footer>
 </body>
