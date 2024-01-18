@@ -22,6 +22,8 @@ class LoginController extends Controller
             return back()->with('mensaje', 'No se ha podido iniciar sesión');
         }
 
-        return redirect()->route('posts.index')->with('success', '');
+        return redirect()->route('posts.index', [
+            'user' => auth()->user()->username,
+        ])->with('success', '');
     }
 }
