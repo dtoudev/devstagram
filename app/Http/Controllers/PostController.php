@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comentario;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -11,7 +12,7 @@ class PostController extends Controller
 
     public function __construct()
     {
-        $this->middleware("auth");
+        $this->middleware("auth")->except(['show', 'index']);
     }
 
     public function index(User $user)
@@ -58,7 +59,7 @@ class PostController extends Controller
     {
         return view("posts.show", [
             'post' => $post,
-            'user' => $user
+            'user' => $user,
         ]);
     }
 }
